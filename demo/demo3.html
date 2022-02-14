@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin="anonymous" integrity="sha384-i+fXrQ+G3+h2478EWpSpIXivtKbbze+0SNOXJGizkAp6DVG/m2fE6hiWeDwskVvp"
+        src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
+    <title>eCharts 入门</title>
+    <style>
+        #app {
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const chartDom = document.getElementById('app');
+        const chart = echarts.init(chartDom);
+        chart.setOption({
+            title: {
+                text: "ECharts 多系列案例"
+            },
+            xAxis: {
+                data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+            },
+            yAxis: {},
+            dataset: {
+                source: [
+                    ['Jan', 34, 20, 'XX', 52],
+                    ['Feb', 28, 14, 'YY', 54],
+                    ['Mar', 45, 23, 'ZZ', 42],
+                    ['Apr', 69, 24],
+                    ['May', 29, 10],
+                    ['Jun', 34, 45],
+                    ['Jul', 25, 67],
+                    ['Aug', 77, 45],
+                    ['Sep', 89, 22],
+                    ['Oct', 32, 24],
+                ]
+            },
+            series: [{
+                type: 'pie',
+                center: ['65%', 60],
+                radius: 35,
+                encode: {
+                    itemName: 3,
+                    value: 4
+                }
+            }, {
+                type: 'line',
+                encode: {
+                    x: 0,
+                    y: 1
+                }
+            }, {
+                type: 'bar',
+                encode: {
+                    x: 0,
+                    y: 2
+                }
+            }]
+        })
+    </script>
+</body>
+
+</html>

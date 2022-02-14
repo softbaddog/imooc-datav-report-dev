@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import TotalSales from '../TotalSales'
-import TotalOrders from '../TotalOrders'
-import TodayUsers from '../TodayUsers'
-import TotalUsers from '../TotalUsers'
+import TotalSales from '../../statics/TotalSales'
+import TotalOrders from '../../statics/TotalOrders'
+import TodayUsers from '../../statics/TodayUsers'
+import TotalUsers from '../../statics/TotalUsers'
 export default {
   name: 'index',
   components: {

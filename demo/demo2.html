@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin="anonymous" integrity="sha384-i+fXrQ+G3+h2478EWpSpIXivtKbbze+0SNOXJGizkAp6DVG/m2fE6hiWeDwskVvp"
+        src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
+    <title>eCharts 入门</title>
+    <style>
+        #app {
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const chartDom = document.getElementById('app');
+        const chart = echarts.init(chartDom);
+        chart.setOption({
+            title: {
+                text: "ECharts 多系列案例"
+            },
+            xAxis: {
+                data: ['一季度', '二季度', '三季度', '四季度']
+            },
+            yAxis: {},
+            series: [{
+                type: 'pie',
+                center: ['50%', 50],
+                radius: 35,
+                data: [{
+                        name: '分类1',
+                        value: 20
+                    },
+                    {
+                        name: '分类2',
+                        value: 30
+                    },
+                    {
+                        name: '分类3',
+                        value: 40
+                    },
+                    {
+                        name: '分类4',
+                        value: 60
+                    },
+                ]
+            }, {
+                type: 'line',
+                data: [100, 122, 68, 123]
+            }, {
+                type: 'bar',
+                data: [100, 200, 300, 400]
+            }]
+        })
+    </script>
+</body>
+
+</html>

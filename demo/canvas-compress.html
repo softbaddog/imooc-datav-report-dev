@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="upload">
+    <script>
+        const ACCEPT = ['image/jpg', 'image/png', 'image/jpeg'];
+        const MAXSIZE = 1024 * 1024 * 3;
+        const MAXSIZE_STR = '3MB';
+        function convertImageToBase64(file, cb) {
+            let reader = new FileReader();
+            reader.addEventListener('load', function(e) {
+                const base64Image = e.target.result;
+                cb(base64Image);
+                reader = null;
+            });
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>

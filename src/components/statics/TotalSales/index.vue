@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import commonCardMixin from '../../mixins/commonCardMixin'
+import commonCardMixin from '../../../mixins/commonCardMixin'
 export default {
   mixins: [commonCardMixin]
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin="anonymous" integrity="sha384-i+fXrQ+G3+h2478EWpSpIXivtKbbze+0SNOXJGizkAp6DVG/m2fE6hiWeDwskVvp"
+        src="https://lib.baomitu.com/echarts/4.7.0/echarts.js"></script>
+    <title>eCharts 入门</title>
+    <style>
+        #app {
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const chartDom = document.getElementById('app');
+        const chart = echarts.init(chartDom);
+        chart.setOption({
+            title: {
+                text: "双坐标系"
+            },
+            xAxis: {
+               type: 'category'
+            },
+            yAxis: [
+                {
+                    max: 100,
+                    min: 0
+                },
+                {
+                    splitLine: {
+                        show: false
+                    }
+                }
+            ],
+            dataset: {
+                source: [
+                    ['product', '2012', '2013', '2014', '2015'],
+                    ['Matcha Latte', 41.1, 30.4, 65.1, 53.3],
+                    ['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+                ]
+            },
+            series: [{
+                type: 'bar',
+                seriesLayoutBy: 'row',
+                yAxisIndex: 0
+            }, {
+                type: 'line',
+                seriesLayoutBy: 'row',
+                yAxisIndex: 1
+            }]
+        })
+    </script>
+</body>
+
+</html>
